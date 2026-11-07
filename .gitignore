@@ -1,5 +1,26 @@
-node_modules
-.next
+# Local environment
 .env
 .env.*
 !.env.example
+
+# Next.js
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Vercel
+.vercel/
+
+# Local database
+prisma/dev.db
+prisma/dev.db-journal
+prisma/dev.db-wal
+prisma/dev.db-shm
+
+# Generated Prisma client
+generated/
+
+# Logs
+*.log
