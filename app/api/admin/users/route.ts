@@ -54,8 +54,8 @@ export async function DELETE(req: Request) {
     const id = searchParams.get("id");
     if (!id) return NextResponse.json({ error: "User ID required" }, { status: 400 });
 
-    // Prevent admin from deleting themselves
-    if (id === session.id) {
+    // Prevent admin from deleting themselves (Added session?.id check here)
+    if (id === session?.id) {
       return NextResponse.json({ error: "You cannot delete your own admin account." }, { status: 400 });
     }
 
