@@ -1,11 +1,13 @@
+
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/prisma"
 }
 
 datasource db {
-  provider = "postgresql" // <-- Yahan sqlite ko postgresql kar diya hai
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
@@ -23,9 +25,9 @@ model VerificationRequest {
   id        String   @id @default(cuid())
   userId    String
   user      User     @relation(fields: [userId], references: [id])
-  type      String   
-  reference String   
+  type      String
+  reference String
   status    String   @default("PENDING")
-  result    String?  
+  result    String?
   createdAt DateTime @default(now())
 }

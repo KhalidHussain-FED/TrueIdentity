@@ -1,6 +1,10 @@
-node_modules
-.next
+node_modules/
+.next/
 .env
-prisma/dev.db
-generated/
-.vercel
+.env.local
+.env.production
+.env.development
+.vercel/
+dist/
+build/
+*.log
