@@ -1,3 +1,5 @@
-generated/prisma/
-prisma/*.db
-prisma/*.db-journal
+node_modules
+.next
+.env
+.env.*
+!.env.example
